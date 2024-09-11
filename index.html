@@ -137,8 +137,8 @@
             <div class="cta-content">
                 <h3>Join our community of thinkers</h3>
                 <p>Sign up now and receive our latest issue, "Reframing Success: Beyond Traditional Metrics"</p>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Enter your email" required>
+                <form class="subscribe-form" id="subscribe-form">
+                    <input type="email" name="email" placeholder="Enter your email" required>
                     <button type="submit" class="cta-button">Subscribe Now</button>
                 </form>
                 <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
@@ -211,6 +211,26 @@
         }).catch(error => {
             alert('Error sending message. Please try again.');
             console.error('Error:', error);
+        });
+    });
+
+    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+
+        fetch('https://script.google.com/macros/s/AKfycbzFrjP0SzFOitwkfSvj4VkPFwwF27_y74eEfgAUC0rUI2pfQZrrzvulk_Qx2e-TO2Hr-g/exec', {
+            method: 'POST',
+            body: data
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Thank you for subscribing!');
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
         });
     });
     </script>
