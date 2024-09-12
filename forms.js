@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (subscribeForm) {
         subscribeForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            console.log('Submitting to:', '__GOOGLE_SCRIPT_URL_SUBSCRIBE__');
             submitForm(this, '__GOOGLE_SCRIPT_URL_SUBSCRIBE__');
         });
     }
