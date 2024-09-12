@@ -170,7 +170,7 @@
         <section class="contact" id="contact">
             <h3>Get in Touch</h3>
             <p>Have a question or want to collaborate? We'd love to hear from you!</p>
-            <form class="contact-form" id="contact-form" action="https://script.google.com/macros/s/AKfycbwjREu2G4O6_uE1102ZI4ErBQiSp91KRIfeAtG4WxH8F_nKsEzn7_f7Qsvsi-G6cnw9/exec" method="POST">
+            <form class="contact-form" id="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
@@ -200,14 +200,23 @@
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', e => {
         e.preventDefault();
-        fetch(form.action, {
-            method : "POST",
-            body: new FormData(form),
-        }).then(
-            response => response.json()
-        ).then((html) => {
-            alert('Message sent successfully');
-            form.reset();
+        const formData = new FormData(form);
+        const data = new URLSearchParams(formData);
+
+        fetch('https://script.google.com/macros/s/AKfycby0B5ad6XseKF_TttaJ-TtqqPfqjDafAV7i1I8bofsnDwuIDtxiqNfChKiJuWfK2mp_/exec', {
+            method: "POST",
+            body: data,
+        }).then(response => {
+            console.log('Response status:', response.status);
+            return response.json();
+        }).then((data) => {
+            console.log('Response data:', data);
+            if (data.result === 'success') {
+                alert('Message sent successfully');
+                form.reset();
+            } else {
+                throw new Error('Submission failed');
+            }
         }).catch(error => {
             alert('Error sending message. Please try again.');
             console.error('Error:', error);
