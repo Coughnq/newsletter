@@ -3,8 +3,6 @@ name: Build and Deploy
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -23,15 +21,9 @@ jobs:
         GOOGLE_SCRIPT_URL_SUBSCRIBE: ${{ secrets.GOOGLE_SCRIPT_URL_SUBSCRIBE }}
       run: |
         mkdir dist
-        if [ "${{ github.event_name }}" == "pull_request" ]; then
-          echo "Running in pull request mode"
-          GOOGLE_SCRIPT_URL_CONTACT="PLACEHOLDER_CONTACT_URL" GOOGLE_SCRIPT_URL_SUBSCRIBE="PLACEHOLDER_SUBSCRIBE_URL" node build.js
-        else
-          node build.js
-        fi
+        node build.js
 
     - name: Deploy to GitHub Pages
-      if: github.event_name == 'push'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
