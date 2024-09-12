@@ -196,52 +196,10 @@
         <p class="copyright">&copy; 2024 Intelliquinte. All Rights Reserved. Break The Perspective™ is a trademark.</p>
     </footer>
 
+    <script src="form-to-sheets.js"></script>
     <script>
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const data = new URLSearchParams(formData);
-
-        fetch('https://script.google.com/macros/s/AKfycby0B5ad6XseKF_TttaJ-TtqqPfqjDafAV7i1I8bofsnDwuIDtxiqNfChKiJuWfK2mp_/exec', {
-            method: "POST",
-            body: data,
-        }).then(response => {
-            console.log('Response status:', response.status);
-            return response.json();
-        }).then((data) => {
-            console.log('Response data:', data);
-            if (data.result === 'success') {
-                alert('Message sent successfully');
-                form.reset();
-            } else {
-                throw new Error('Submission failed');
-            }
-        }).catch(error => {
-            alert('Error sending message. Please try again.');
-            console.error('Error:', error);
-        });
-    });
-
-    document.getElementById('subscribe-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const form = e.target;
-        const data = new FormData(form);
-
-        fetch('https://script.google.com/macros/s/AKfycbzFrjP0SzFOitwkfSvj4VkPFwwF27_y74eEfgAUC0rUI2pfQZrrzvulk_Qx2e-TO2Hr-g/exec', {
-            method: 'POST',
-            body: data
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert('Thank you for subscribing!');
-            form.reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
-        });
-    });
+        new FormToSheets('contact-form', '__GOOGLE_SCRIPT_URL_CONTACT__');
+        new FormToSheets('subscribe-form', '__GOOGLE_SCRIPT_URL_SUBSCRIBE__');
     </script>
 </body>
 </html>
