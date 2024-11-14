@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Newsletter Statistics
     const stats = {
         subscribers: 0,
-        articlesPublished: 0,
+        articlesPublished: 1,
         lastUpdated: new Date()
     };
 
