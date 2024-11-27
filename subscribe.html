@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - Newsletter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src = "/assets/logo/Logo1.PNG" alt="Intelliquinte Logo" class="logo-image">
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/archive.html" class="nav-link">Archive</a>
+                <a href="/subscribe.html" class="nav-link">Subscribe</a>
+                <a href="/about.html" class="nav-link">About</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <section class="subscribe-section">
+            <h1>Subscribe to Our Newsletter</h1>
+            <p class="subscribe-description">Join our community and receive weekly insights directly in your inbox.</p>
+            
+            <form id="subscribeForm" class="subscribe-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="/terms.html">Terms of Service</a> and <a href="/privacy.html">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="submit-button">Subscribe</button>
+            </form>
+            
+            <div id="formMessage" class="form-message"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-sections">
+                <div class="footer-links-section">
+                    <h4>Legal</h4>
+                    <div class="footer-links">
+                        <a href="/privacy.html">Privacy Policy</a>
+                        <a href="/terms.html">Terms of Service</a>
+                        <a href="/disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <p class="footer-copyright">
+                    © 2024 Intelliquinte L.L.C. All rights reserved.
+                </p>
+                <p class="footer-trademark">
+                    Intelliquinte™ is a trademark of Intelliquinte L.L.C. All other trademarks, service marks, and logos used on this site are the property of their respective owners.
+                </p>
+                <p class="footer-rights">
+                    No part of this website may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of Intelliquinte L.L.C.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/subscribe.js"></script>
+</body>
+</html> 

@@ -1,58 +1,123 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTELLIQUINTE™ Newsletter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="/intelliquinte.PNG" alt="INTELLIQUINTE™" class="logo-image">
-        </header>
-
-        <nav>
-            <div class="nav-grid">
-                <a href="/index.html" class="nav-item">Home</a>
-                <a href="/Archive/" class="nav-item">Archive</a>
-                <a href="/Subscribe/" class="nav-item">Subscribe</a>
-                <a href="About/" class="nav-item">About</a>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src = "/assets/logo/Logo1.PNG" alt="Intelliquinte Logo" class="logo-image">
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/archive.html" class="nav-link">Archive</a>
+                <a href="/subscribe.html" class="nav-link">Subscribe</a>
+                <a href="/about.html" class="nav-link">About</a>
             </div>
         </nav>
+    </header>
 
-        <main>
-            <section class="stats-section">
-                <!-- Stats will be populated by JavaScript -->
-            </section>
-
-            <section class="resources-section">
-                <!-- Resources will be populated by JavaScript -->
-            </section>
-
-            <section class="subscribe-section">
-                <h2>Stay Informed</h2>
-                <form class="subscribe-form">
-                    <input 
-                        type="email" 
-                        placeholder="your@email.com" 
-                        required 
-                        aria-label="Email address"
-                    >
-                    <button type="submit">Subscribe</button>
-                </form>
-            </section>
-        </main>
-
-        <footer>
-            <p>© INTELLIQUINTE L.L.C. 2024</p>
-            <div class="footer-links">
-                <a href="/Privacy Policy/">Privacy Policy</a>
-                <a href="/Terms Of Service/">Terms of Service</a>
+    <main class="main-content">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <h3>Subscribers</h3>
+                <p class="stat-number">1</p>
+                <p class="stat-secondary">There's Always A Beginning</p>
             </div>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+            <div class="stat-card">
+                <h3>Articles</h3>
+                <p class="stat-number">2</p>
+            </div>
+            <div class="stat-card">
+                <h3>Words Written</h3>
+                <p class="stat-number">945</p>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <h2>Stay Informed, Stay Inspired</h2>
+            <p>Join our community of readers who value thoughtful insights delivered every blue moon.</p>
+            <a href="/subscribe.html" class="cta-button">Subscribe Now</a>
+        </section>
+
+        <!-- Updated Helplines Section with grid -->
+        <section class="helplines-section">
+            <h2>Important Resources</h2>
+            <div class="helplines-container">
+                <!-- First Row -->
+                <div class="helpline">
+                    <h3>988 Suicide & Crisis Lifeline</h3>
+                    <div class="resource-details">
+                        <p class="resource-primary">Call or Text: 988</p>
+                        <p class="resource-secondary">Available 24/7</p>
+                        <a href="https://988lifeline.org" class="resource-link">988lifeline.org</a>
+                    </div>
+                </div>
+                
+                <div class="helpline">
+                    <h3>Crisis Text Line</h3>
+                    <div class="resource-details">
+                        <p class="resource-primary">Text HOME to 741741</p>
+                        <p class="resource-secondary">Available 24/7</p>
+                        <a href="https://www.crisistextline.org" class="resource-link">crisistextline.org</a>
+                    </div>
+                </div>
+
+                <!-- Second Row -->
+                <div class="helpline">
+                    <h3>SAMHSA's National Helpline</h3>
+                    <div class="resource-details">
+                        <p class="resource-primary">1-800-662-4357</p>
+                        <p class="resource-secondary">Treatment referral and information, 24/7</p>
+                        <a href="https://www.samhsa.gov/find-help/national-helpline" class="resource-link">samhsa.gov/find-help</a>
+                    </div>
+                </div>
+
+                <div class="helpline">
+                    <h3>Veterans Crisis Line</h3>
+                    <div class="resource-details">
+                        <p class="resource-primary">Dial 988, then press 1</p>
+                        <p class="resource-secondary">Text: 838255</p>
+                        <a href="https://www.veteranscrisisline.net" class="resource-link">veteranscrisisline.net</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-sections">
+                <div class="footer-links-section">
+                    <h4>Legal</h4>
+                    <div class="footer-links">
+                        <a href="/privacy.html">Privacy Policy</a>
+                        <a href="/terms.html">Terms of Service</a>
+                        <a href="/disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <p class="footer-copyright">
+                    © 2024 Intelliquinte L.L.C. All rights reserved.
+                </p>
+                <p class="footer-trademark">
+                    Intelliquinte™ is a trademark of Intelliquinte L.L.C. All other trademarks, service marks, and logos used on this site are the property of their respective owners.
+                </p>
+                <p class="footer-rights">
+                    No part of this website may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of Intelliquinte L.L.C.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
-</html>
+</html> 
