@@ -24,7 +24,7 @@ document.getElementById('subscribeForm').addEventListener('submit', async functi
         });
 
         formMessage.className = 'form-message success';
-        formMessage.textContent = 'Thank you for subscribing! Please check your email to confirm your subscription.';
+        formMessage.textContent = 'Thank you for subscribing!';
         e.target.reset();
 
     } catch (error) {
