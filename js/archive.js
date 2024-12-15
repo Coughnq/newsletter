@@ -5,14 +5,14 @@ const articles = [
         title: "The Intro",
         date: "November 2024",
         excerpt: "The beginning of something new.",
-        url: "/archive/pages/Newsletter1.html"
+        url: "pages/Newsletter1.html"
     },
     {
         id: 2,
         title: "A journey lit by AI: Reflections from the Founder",
         date: "November 2024",
         excerpt: "Abner Sanabria-Cruz reflects on the journey of Intelliquinte and the role of AI in his life.",
-        url: "/archive/pages/Newsletter2.html"
+        url: "pages/Newsletter2.html"
     },
 
     // Add more articles as needed
